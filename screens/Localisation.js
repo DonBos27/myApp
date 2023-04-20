@@ -45,7 +45,7 @@ const Localisation = () => {
     const fetchNearbyPlaces = () => {
         var config = {
             method: 'get',
-            url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat}%2C${long}&radius=5000&type=restaurant&key=AIzaSyBkue_ZXAlaDnMZcISiXRkgn0NGDLCSxGY`,
+            url: `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat}%2C${long}&radius=5000&type=hospital&key=AIzaSyBkue_ZXAlaDnMZcISiXRkgn0NGDLCSxGY`,
             headers: {}
         };
         (axios(config)).then(function (response) {

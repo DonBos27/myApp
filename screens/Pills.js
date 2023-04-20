@@ -21,9 +21,9 @@ const Pills = () => {
     const [time, setTime] = useState(new Date())
     const [pills, setPills] = useState("");
     const [postData, setPostData] = useState([])
-    const [medType, setMedType] = useState();
-    const [medUnit, setMedUnit] = useState();
-    const [strength, setStrength] = useState();
+    const [medType, setMedType] = useState("");
+    const [medUnit, setMedUnit] = useState("");
+    const [strength, setStrength] = useState("");
 
 
 
@@ -111,8 +111,8 @@ const Pills = () => {
                     <Text style={{ fontSize: 30, marginTop: 10, marginLeft: 20, fontWeight: "700", color: "white" }}>Your Pills</Text>
                     {postData && postData.map((item, index) => {
                         return (
-                            <View>
-                                <TouchableOpacity style={styles.cardPills} key={index} >
+                            <View key={index}>
+                                <TouchableOpacity style={styles.cardPills}  >
                                     <View style={{ flexDirection: 'row', justifyContent: "space-between", }} >
                                         <View style={{ backgroundColor: 'lightgray', width: 140, height: 120, borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}>
                                             <Text style={styles.cardPillsHeaderText}>{item.time}</Text>
@@ -132,7 +132,7 @@ const Pills = () => {
 
                                 <Modal
                                     isVisible={isModalEditVisible}
-                                    style={{ flex: 1, backgroundColor: '#0E6C94', borderRadius: 20, marginTop: 180 }}
+                                    style={{ flex: 1, backgroundColor: '#0E6C94', borderRadius: 20, marginTop: 80 }}
                                     onBackdropPress={toggleModalEdit}
                                     animationOutTiming={1000}
                                     onSwipeComplete={toggleModalEdit}
@@ -161,7 +161,7 @@ const Pills = () => {
                                             <View style={styles.edit}>
                                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 25, marginBottom: 15, marginTop: 15 }}>
                                                     <Text style={{ fontSize: 16 }}>Pills Name</Text>
-                                                    <TextInput style={{ fontSize: 16, marginRight: 15 }} editable={true} onChangeText={(e) => setPills(e)} value={pills} />
+                                                    <TextInput style={{ fontSize: 16, marginRight: 15 }} editable={true} onChangeText={(e) => setPills(e)} placeholder={pills} />
                                                 </View>
                                                 <View style={{ borderWidth: 0.5, opacity: 0.3, marginLeft: 25, }} />
                                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 25, marginBottom: 15, marginTop: 15 }}>
@@ -258,8 +258,8 @@ const Pills = () => {
                     <Text style={{ fontSize: 30, marginTop: 10, marginLeft: 20, fontWeight: "700", color: "white" }}>About Pills</Text>
                     <TouchableOpacity onPress={toggleAboutPills}>
                         <View
-                            style={{ flex: 1, flexDirection: "column", backgroundColor: "white", borderRadius: 10, marginTop: 20, marginLeft: 20, marginRight: 10, }}>
-                            <Image source={AboutPills} style={{ flex: 1, height: 200, marginTop: 0, width: 384, borderTopLeftRadius: 10, borderTopRightRadius: 10 }} />
+                            style={{  flexDirection: "column", backgroundColor: "white", borderRadius: 10, marginTop: 20, marginLeft: 20, marginRight: 10,marginBottom:30 }}>
+                            <Image source={AboutPills} style={{ flex: 1, height: 200, marginTop: 0, width: "100%", borderTopLeftRadius: 10, borderTopRightRadius: 10 }} />
                             <Text style={{ fontSize: 20, fontWeight: "bold", color: "black", marginTop: 20, marginLeft: 15, }}>
                                 Tracking Your Pills
                             </Text>
@@ -442,7 +442,9 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 10,
         marginBottom: 10,
-        paddingRight: 280,
+        paddingRight: 255,
+        paddingLeft: 20,
+
     },
     btnContainer2: {
         backgroundColor: 'white',
@@ -573,7 +575,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         padding: 20,
-        marginTop: -45,
+        marginTop: -75,
         borderBottomWidth: 0.5,
         borderColor: 'lightgray',
         backgroundColor: '#fff',

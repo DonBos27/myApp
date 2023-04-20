@@ -101,13 +101,6 @@ const MedInfo = () => {
                     isVisible={isModalVisible}
                     style={{ flex: 1, backgroundColor: '#0E6C94', borderRadius: 20, marginTop: 95, width: '100%', marginLeft: 0,marginBottom: -50, }}
                     onBackdropPress={toggleModal}
-                    // animationOutTiming={1000}
-                    // onSwipeComplete={toggleModal}
-                    // swipeDirection={['down']}
-                    // swipeThreshold={100}
-                    // animationInTiming={1000}
-                    // animationIn="slideInUp"
-                    // animationOut="slideOutDown"
                 >
                     <View style={styles.infoCardHeader}>
                         <TouchableOpacity onPress={toggleModal}>

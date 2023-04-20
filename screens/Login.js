@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 150,
   },
   or: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 20,
     marginLeft: 50,
   },
   container: {
@@ -109,9 +109,9 @@ export default function Login({ navigation }) {
         <Text style={styles.btnText}>LOGIN</Text>
       </TouchableOpacity>
       <View>
-        <Text style={{ paddingTop: 20, paddingLeft: 102, fontSize: 17 }} > Don't have an account? </Text>
+        <Text style={{ paddingTop: 20, paddingLeft: 60, fontSize: 17 }} > Don't have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate(ROUTES.REGISTER)}>
-          <Text style={{ color: '#841584', fontSize: 17, marginTop: -20, marginLeft: 290 }}> Register</Text>
+          <Text style={{ color: '#841584', fontSize: 17, marginTop: -20, marginLeft: 250 }}> Register</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.or}>
